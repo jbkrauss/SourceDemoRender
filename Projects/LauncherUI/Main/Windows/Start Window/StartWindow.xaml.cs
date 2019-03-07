@@ -108,6 +108,8 @@ namespace LauncherUI
 			{
 				AddLogText("Library update is available from version {0} to {1}. Press Upgrade to view release.", librarylocal, libraryweb);
 				UpgradeButton.IsEnabled = true;
+
+				ret.HasMessage = true;
 			}
 
 			return ret;
@@ -142,12 +144,11 @@ namespace LauncherUI
 
 						if (webver > localver)
 						{
-							ret.HasMessage = true;
-
 							var name = item.Query.Name;
+							AddLogText("Update is available for extension \"{0}\" from version {1} to {2}.", name, localver, webver);
 
-							var format = string.Format("Update is available for extension \"{0}\" from version {1} to {2}.", name, localver, webver);
-							AddLogText(format);
+							ret.HasMessage = true;
+							UpgradeButton.IsEnabled = true;
 						}
 					}
 				}
