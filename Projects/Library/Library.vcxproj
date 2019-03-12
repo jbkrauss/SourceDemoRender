@@ -129,6 +129,7 @@
     <ClInclude Include="Interface\Application\Modules\Movie Record\Various\LAV.hpp" />
     <ClInclude Include="Interface\Application\Modules\Movie Record\Various\Stream.hpp" />
     <ClInclude Include="Interface\Application\Modules\Movie Record\Various\Video.hpp" />
+    <ClInclude Include="Interface\Application\Modules\Shared\CreateInterface.hpp" />
     <ClInclude Include="Interface\Application\Modules\Shared\EngineClient.hpp" />
     <ClInclude Include="Interface\Application\Modules\Shared\MaterialSystem.hpp" />
     <ClInclude Include="Interface\Application\Modules\Shared\SourceGlobals.hpp" />
@@ -169,6 +170,7 @@
     </ClCompile>
     <ClCompile Include="Interface\Application\Modules\Shared\EngineClient.cpp" />
     <ClCompile Include="Interface\Application\Modules\Shared\MaterialSystem.cpp" />
+    <ClCompile Include="Interface\Application\Modules\Shared\CreateInterface.cpp" />
     <ClCompile Include="Interface\Application\Modules\Shared\SourceGlobals.cpp" />
     <ClCompile Include="Interface\Application\Modules\Shared\Console.cpp" />
     <ClCompile Include="Interface\LibraryInterface.cpp" />

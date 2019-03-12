@@ -18,7 +18,7 @@ namespace
 				{
 					auto address = SDR::Hooking::GetAddressFromJsonPattern(value);
 					
-					DX9Device = **(IDirect3DDevice9Ex***)address;
+					DX9Device = *(IDirect3DDevice9Ex**)address;
 					SDR::Error::ThrowIfNull(DX9Device);
 				}
 			),

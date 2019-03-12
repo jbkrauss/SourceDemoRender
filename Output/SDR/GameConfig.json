@@ -343,5 +343,220 @@
 		"Inherit": "Counter-Strike Source\\cstrike",
 		"DisplayName": "Half-Life 2: Update",
 		"ExecutableName": "Half-Life 2 Update\\hl2.exe"
+	},
+	"Counter-Strike Global Offensive\\csgo":
+	{
+		"DisplayName": "Counter-Strike: Global Offensive",
+		"ExecutableName": "Counter-Strike Global Offensive\\csgo.exe",
+
+		"MaterialsPtr":
+		{
+			"Comment": "CSGO interface version March 9 2019",
+			"SortGroup": "Pointer",
+			"Module": "materialsystem.dll",
+			"InterfaceVersion": "VMaterialSystem080"
+		},
+		"MaterialSystem_GetBackBufferDimensions":
+		{
+			"Comment": "Static CSGO IMaterialSystem vtable offset March 7 2019",
+			"SortGroup": "Function",
+			"VTPtrName": "MaterialsPtr",
+			"VTIndex": 35
+		},
+		"EngineClientPtr":
+		{
+			"Comment": "CSGO interface version March 9 2019",
+			"SortGroup": "Pointer",
+			"Module": "engine.dll",
+			"InterfaceVersion": "VEngineClient014"
+		},
+		"EngineClient_ConsoleVisible":
+		{
+			"Comment": "Static CSS CEngineClient vtable offset August 13 2017",
+			"SortGroup": "Function",
+			"VTPtrName": "EngineClientPtr",
+			"VTIndex": 11
+		},
+		"EngineClient_FlashWindow":
+		{
+			"Comment": "Static CSS CEngineClient vtable offset August 13 2017",
+			"SortGroup": "Function",
+			"VTPtrName": "EngineClientPtr",
+			"VTIndex": 135
+		},
+		"EngineClient_ClientCommand":
+		{
+			"Comment": "Static CSGO CEngineClient vtable offset March 7 2019",
+			"SortGroup": "Function",
+			"VTPtrName": "EngineClientPtr",
+			"VTIndex": 7
+		},
+		"D3D9_Device":
+		{
+			"Comment": "0x1002E120 static CSGO IDA address March 7 2019",
+			"SortGroup": "Pointer",
+			"Module": "shaderapidx9.dll",
+			"Pattern": "A1 ?? ?? ?? ?? 53 8B D9 B9 ?? ?? ?? ?? 56 FF 50 34 85 C0 74 0E 68 ?? ?? ?? ?? FF 15 ?? ?? ?? ?? 83 C4 04 8B 8B ?? ?? ?? ?? 8D B3 ?? ?? ?? ?? 85 C9 74 0C 8B 01 51 FF 50 08 C7 06 ?? ?? ?? ??",
+			"Offset": 64
+		},
+		"DrawLoading":
+		{
+			"Comment": "0x100D115C static CSGO IDA address March 7 2019",
+			"SortGroup": "Pointer",
+			"Module": "engine.dll",
+			"Pattern": "38 05 ?? ?? ?? ?? 75 16 8B 0D ?? ?? ?? ?? 68 ?? ?? ?? ?? 8B 01 FF 50 5C FF 05 ?? ?? ?? ??",
+			"Offset": 2
+		},
+		"View_Render":
+		{
+			"Comment": "0x10228060 static CSGO IDA address March 7 2019",
+			"SortGroup": "Function",
+			"Module": "client_panorama.dll",
+			"Pattern": "55 8B EC 83 E4 F8 83 EC 28 56 57 8B 7D 08 83 7F 08 00 0F 84 ?? ?? ?? ?? 83 7F 0C 00"
+		},
+		"StartMovie":
+		{
+			"Comment": "0x100D1886 static CSGO IDA address March 7 2019",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "50 8B 01 FF 50 38 50 8B D6 8B CF E8 ?? ?? ?? ?? 68 ?? ?? ?? ?? FF 15 ?? ?? ?? ?? 83 C4 14 5F 5E 5B 8B E5 5D C3",
+			"Offset": 11,
+			"IsRelativeJump": true
+		},
+		"StartMovieCommand":
+		{
+			"Comment": "0x100D15E0 static CSGO IDA address March 7 2019",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "55 8B EC 83 EC 08 53 56 57 8B 7D 08 8B 1F 83 FB 02 7D 5F 8B 35 ?? ?? ?? ?? 68 ?? ?? ?? ?? FF D6 68 ?? ?? ?? ?? FF D6 68 ?? ?? ?? ?? FF D6"
+		},
+		"EndMovie":
+		{
+			"Comment": "0x100D1530 static CSGO IDA address March 7 2019",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "80 3D ?? ?? ?? ?? ?? 0F 84 ?? ?? ?? ?? 8B 0D ?? ?? ?? ?? F3 0F 10 05 ?? ?? ?? ?? 51 F3 0F 11 04 24 8B 01 FF 50 3C 80 3D"
+		},
+		"EndMovieCommand":
+		{
+			"Comment": "0x100D18B0 static CSGO IDA address March 7 2019",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "80 3D ?? ?? ?? ?? ?? 75 0F 68 ?? ?? ?? ?? FF 15 ?? ?? ?? ?? 83 C4 04 C3 E8 ?? ?? ?? ?? 68 ?? ?? ?? ?? FF 15 ?? ?? ?? ?? 59 C3"
+		},
+		"SUpdateGuts":
+		{
+			"Comment": "0x1006E1B4 static CSS IDA address December 27 2017",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "D9 1C 24 E8 ?? ?? ?? ?? 83 C4 04 83 7D ?? 00 7C ?? 8B ?? ?? 85 ??",
+			"Offset": 3,
+			"IsRelativeJump": true,
+			"Disable": true
+		},
+		"CvarPtr":
+		{
+			"Comment": "CSGO interface version March 9 2019",
+			"SortGroup": "Pointer",
+			"Module": "vstdlib.dll",
+			"InterfaceVersion": "VEngineCvar007"
+		},
+		"Cvar_FindVar":
+		{
+			"Comment": "Static CSS vtable offset August 8 2017 (0x1009D6B8)",
+			"SortGroup": "Function",
+			"VTPtrName": "CvarPtr",
+			"VTIndex": 13
+		},
+		"ConVar_Info":
+		{
+			"Comment": "VT indexes August 17 2017",
+			"SortGroup": "Info",
+			"Variant": 1,
+			"VTIndex_SetValueString": 10,
+			"VTIndex_SetValueFloat": 11,
+			"VTIndex_SetValueInt": 12
+		},
+		"ConVar_Constructor3":
+		{
+			"Comment": "0x10049680 static CSS IDA address December 19 2017",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "55 8B EC 83 E4 F8 8B 45 0C 83 EC 10 F3 0F 10 45 ?? 85 C0 56 8B F1"
+		},
+		"ConCommandBase_Info":
+		{
+			"SortGroup": "Info",
+			"Variant": 0
+		},
+		"CCommand_Info":
+		{
+			"SortGroup": "Info",
+			"Variant": 0
+		},
+		"ConCommand_Info":
+		{
+			"SortGroup": "Info",
+			"Variant": 0
+		},
+		"ConCommand_Constructor1":
+		{
+			"Comment": "0x10048F40 static CSS IDA address December 19 2017",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "6A 00 51 C7 04 24 ?? ?? ?? ?? 6A 00 51 C7 04 24 ?? ?? ?? ?? B9 ?? ?? ?? ?? 6A 00 68 ?? ?? ?? ?? 68 ?? ?? ?? ?? 68 ?? ?? ?? ?? 68 ?? ?? ?? ?? E8 ?? ?? ?? ??",
+			"IsRelativeJump": true,
+			"Offset": 47
+		},
+		"Console_Info":
+		{
+			"SortGroup": "Info",
+			"Library": "tier0.dll",
+
+			"MessageVariant": 0,
+			"MessageExport": "Msg",
+
+			"MessageColorVariant": 0,
+			"MessageColorExport": "?ConColorMsg@@YAXABVColor@@PBDZZ",
+
+			"WarningVariant": 0,
+			"WarningExport": "Warning"
+		},
+		"VideoModePtr":
+		{
+			"Comment": "0x101BE370 static CSGO IDA address March 7 2019",
+			"SortGroup": "Pointer",
+			"Module": "engine.dll",
+			"Pattern": "8B 0D ?? ?? ?? ?? C7 06 ?? ?? ?? ?? 8B 01 FF 50 38 8B 0D ?? ?? ?? ?? 8B D8",
+			"Offset": 2
+		},
+		"VideoMode_WriteMovieFrame":
+		{
+			"Comment": "Static CSGO CVideoMode_MaterialSystem vtable offset March 7 2019",
+			"SortGroup": "Function",
+			"VTPtrName": "VideoModePtr",
+			"VTIndex": 23
+		},
+		"WaveCreateTmpFile":
+		{
+			"Comment": "0x10069660 static CSGO IDA address March 7 2019",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "55 8B EC 81 EC ?? ?? ?? ?? 8D 95 ?? ?? ?? ?? B9 ?? ?? ?? ?? 56 68 ?? ?? ?? ?? E8 ?? ?? ?? ?? 68 ?? ?? ?? ?? BA ?? ?? ?? ??"
+		},
+		"WaveAppendTmpFile":
+		{
+			"Comment": "0x100697E0 static CSGO IDA address March 7 2019",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "55 8B EC 81 EC ?? ?? ?? ?? B9 ?? ?? ?? ?? 56 57 8B FA 8D 95 ?? ?? ?? ??"
+		},
+		"WaveFixupTmpFile":
+		{
+			"Comment": "0x10069880 static CSGO IDA address March 7 2019",
+			"SortGroup": "Function",
+			"Module": "engine.dll",
+			"Pattern": "55 8B EC 81 EC ?? ?? ?? ?? 8D 95 ?? ?? ?? ?? 56 68 ?? ?? ?? ?? E8 ?? ?? ?? ??"
+		}
 	}
 }

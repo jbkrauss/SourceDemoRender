@@ -1,5 +1,6 @@
 #include "PrecompiledHeader.hpp"
 #include "Console.hpp"
+#include "CreateInterface.hpp"
 #include "Interface\Application\Application.hpp"
 
 namespace
@@ -33,6 +34,8 @@ namespace
 				const char* Name;
 				const char* HelpString;
 				int Flags;
+				void* Dummy1;
+				void* Dummy2;
 			};
 		}
 
@@ -260,20 +263,31 @@ namespace
 			SDR::Hooking::ModuleShared::Variant::Function<FindVarType> FindVar(Entries::FindVar);
 		}
 
+		struct IWhatever
+		{
+			virtual void Test1(int value)
+			{
+
+			}
+		};
+
+		void Handler(const rapidjson::Value& value)
+		{
+			auto module = value.FindMember("Module");
+			auto version = value.FindMember("InterfaceVersion");
+			auto address = SDR::Interface::CreateInterface(module->value.GetString(), version->value.GetString());
+
+			Ptr = address;
+			SDR::Error::ThrowIfNull(Ptr);
+
+			SDR::Hooking::ModuleShared::Registry::SetKeyValue("CvarPtr", Ptr);
+		}
+
 		auto Adders = SDR::CreateAdders
 		(
 			SDR::ModuleHandlerAdder
 			(
-				"CvarPtr",
-				[](const rapidjson::Value& value)
-				{
-					auto address = SDR::Hooking::GetAddressFromJsonPattern(value);
-
-					Ptr = **(void***)(address);
-					SDR::Error::ThrowIfNull(Ptr);
-
-					SDR::Hooking::ModuleShared::Registry::SetKeyValue("CvarPtr", Ptr);
-				}
+				"CvarPtr", Handler
 			),
 			SDR::ModuleHandlerAdder
 			(
@@ -334,7 +348,7 @@ namespace
 
 namespace
 {
-	auto MakeGenericVariable(const char* name, const char* value, int flags = 0, bool hasmin = false, float min = 0, bool hasmax = false, float max = 0)
+	SDR::Console::Variable MakeGenericVariable(const char* name, const char* value, int flags = 0, bool hasmin = false, float min = 0, bool hasmax = false, float max = 0)
 	{
 		SDR::Console::Variable ret;
 		size_t size = 0;
@@ -363,7 +377,7 @@ namespace
 		return ret;
 	}
 
-	auto MakeGenericCommand(const char* name, void* callback)
+	SDR::Console::Command MakeGenericCommand(const char* name, void* callback)
 	{
 		SDR::Console::Command ret;
 		size_t size = 0;

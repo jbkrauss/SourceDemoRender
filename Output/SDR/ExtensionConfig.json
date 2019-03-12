@@ -79,5 +79,9 @@
 	"Half-Life 2 Update\\hl2":
 	{
 		"Inherit": "Counter-Strike Source\\cstrike"
+	},
+	"Counter-Strike Global Offensive\\csgo":
+	{
+		"Inherit": "Counter-Strike Source\\cstrike"
 	}
 }

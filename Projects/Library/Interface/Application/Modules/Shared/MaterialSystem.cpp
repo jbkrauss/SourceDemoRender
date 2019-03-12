@@ -1,5 +1,6 @@
 #include "PrecompiledHeader.hpp"
 #include "MaterialSystem.hpp"
+#include "CreateInterface.hpp"
 #include "Interface\Application\Application.hpp"
 
 namespace
@@ -19,6 +20,14 @@ namespace
 			SDR::Hooking::ModuleShared::Variant::Function<GetBackBufferDimensionsType> GetBackBufferDimensions(Entries::GetBackBufferDimensions);
 		}
 
+		struct IWhatever
+		{
+			virtual void Test1(int value)
+			{
+
+			}
+		};
+
 		auto Adders = SDR::CreateAdders
 		(
 			SDR::ModuleHandlerAdder
@@ -26,9 +35,11 @@ namespace
 				"MaterialsPtr",
 				[](const rapidjson::Value& value)
 				{
-					auto address = SDR::Hooking::GetAddressFromJsonPattern(value);
+					auto module = value.FindMember("Module");
+					auto version = value.FindMember("InterfaceVersion");
+					auto address = SDR::Interface::CreateInterface(module->value.GetString(), version->value.GetString());
 
-					Ptr = **(void***)(address);
+					Ptr = address;
 					SDR::Error::ThrowIfNull(Ptr);
 
 					SDR::Hooking::ModuleShared::Registry::SetKeyValue("MaterialsPtr", Ptr);

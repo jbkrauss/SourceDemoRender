@@ -1,5 +1,6 @@
 #include "PrecompiledHeader.hpp"
 #include "EngineClient.hpp"
+#include "CreateInterface.hpp"
 #include "Interface\Application\Application.hpp"
 
 namespace
@@ -34,9 +35,11 @@ namespace
 				"EngineClientPtr",
 				[](const rapidjson::Value& value)
 				{
-					auto address = SDR::Hooking::GetAddressFromJsonPattern(value);
+					auto module = value.FindMember("Module");
+					auto version = value.FindMember("InterfaceVersion");
+					auto address = SDR::Interface::CreateInterface(module->value.GetString(), version->value.GetString());
 
-					Ptr = **(void***)(address);
+					Ptr = address;
 					SDR::Error::ThrowIfNull(Ptr);
 
 					SDR::Hooking::ModuleShared::Registry::SetKeyValue("EngineClientPtr", Ptr);

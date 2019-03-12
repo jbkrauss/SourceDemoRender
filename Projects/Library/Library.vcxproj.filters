@@ -75,6 +75,9 @@
     <ClInclude Include="Interface\Application\Modules\Movie Record\Various\Audio.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Interface\Application\Modules\Shared\CreateInterface.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main\Precompiled Header\PrecompiledHeader.cpp">
@@ -126,6 +129,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Interface\Application\Modules\Movie Record\Various\Audio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\Application\Modules\Shared\CreateInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
